@@ -27,6 +27,10 @@ class auth{
                 if  (!empty($row)){
                     return True;
                 }
+            } else {
+                // IP changed - clear session so user can log in again
+                $_SESSION = array();
+                return False;
             }
         }
         return False;
